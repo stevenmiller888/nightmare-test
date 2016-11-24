@@ -1,6 +1,16 @@
 const Nightmare = require('nightmare')
 const test = require('ava')
 
+test('demo form creates leads', async t => {
+  await Nightmare()
+  .goto('https://segment.com/contact/demo')
+  .type('.SupportForm input[name="email"]', 'adkjasldfj')
+  .type('.SupportForm input[name="phone"]', 'a091fehio')
+  .type('.SupportForm input[name="name"]', '093eifhon')
+  .type('.SupportForm input[name="company"]', 'oiwefh')
+  .end()
+})
+
 test('can visit url', async t => {
   const url = 'https://www.google.com/'
   const page = await Nightmare().goto(url)
